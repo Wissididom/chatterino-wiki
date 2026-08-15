@@ -1,0 +1,2459 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://wiki.chatterino.com/Filters/">
+      
+      
+        <link rel="prev" href="../Commands/">
+      
+      
+        <link rel="next" href="../Search/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="https://chatterino.com/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Filters - Chatterino</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-to-filters" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Chatterino" class="md-header__button md-logo" aria-label="Chatterino" data-md-component="logo">
+      
+  <img src="https://chatterino.com/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Chatterino
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Filters
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/chatterino/chatterino2" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Chatterino" class="md-nav__button md-logo" aria-label="Chatterino" data-md-component="logo">
+      
+  <img src="https://chatterino.com/logo.svg" alt="logo">
+
+    </a>
+    Chatterino
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/chatterino/chatterino2" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chat
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chat
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Filters
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction to Filters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Filters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#writing-your-own-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing your own filters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Writing your own filters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-add" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Add
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminology
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example filters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example filters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#only-show-messages-that-contain-the-phrase-hello" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Only show messages that contain the phrase hello
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#only-show-messages-that-are-less-than-40-characters-long-or-are-sent-by-a-subscriber" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Only show messages that are less than 40 characters long, OR are sent by a subscriber
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#only-show-messages-originated-in-channel-somestreamer-and-are-from-users-with-a-moderator-badge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Only show messages originated in channel somestreamer AND are from users with a moderator badge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hide-messages-that-start-with-the-phrase-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hide messages that start with the phrase !points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hide-bits-combo-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hide bits combo messages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-point-rewards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Channel point rewards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hide-the-connecteddisconnected-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hide the connected/disconnected message
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hide-the-connecteddisconnected-message-and-joinpart-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hide the connected/disconnected message and JOIN/PART messages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subathon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subathon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hide-fishing-minigame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hide fishing minigame
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watch-streak" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Watch streak
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filter-syntax-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filter Syntax + Semantics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Filter Syntax + Semantics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regular-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regular Expressions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Regular Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple matching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-capturing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Group capturing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-of-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Order of Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Regex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Twitch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hotkeys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hotkeys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Image%20Uploader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image Uploader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Link%20Previews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Link Previews
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Moderation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moderation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Third_party_services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third party services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Developers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Environment%20Variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Crash%20Analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crash Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contributing%20for%20Developers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Developer%20Logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction to Filters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Filters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#writing-your-own-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing your own filters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Writing your own filters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-add" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Add
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminology
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example filters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example filters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#only-show-messages-that-contain-the-phrase-hello" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Only show messages that contain the phrase hello
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#only-show-messages-that-are-less-than-40-characters-long-or-are-sent-by-a-subscriber" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Only show messages that are less than 40 characters long, OR are sent by a subscriber
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#only-show-messages-originated-in-channel-somestreamer-and-are-from-users-with-a-moderator-badge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Only show messages originated in channel somestreamer AND are from users with a moderator badge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hide-messages-that-start-with-the-phrase-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hide messages that start with the phrase !points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hide-bits-combo-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hide bits combo messages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-point-rewards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Channel point rewards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hide-the-connecteddisconnected-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hide the connected/disconnected message
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hide-the-connecteddisconnected-message-and-joinpart-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hide the connected/disconnected message and JOIN/PART messages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subathon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subathon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hide-fishing-minigame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hide fishing minigame
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watch-streak" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Watch streak
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filter-syntax-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filter Syntax + Semantics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Filter Syntax + Semantics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regular-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regular Expressions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Regular Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple matching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-capturing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Group capturing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-of-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Order of Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/Chatterino/wiki/edit/master/docs/Filters.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/Chatterino/wiki/raw/master/docs/Filters.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+  <h1>Filters</h1>
+
+<p>Filters are a powerful tool to create your own custom, filtered channel splits. Filters allow you to selectively show messages that satisfy your own custom criteria: show subscribers' messages, moderator messages, channel point redemptions, new subscriptions, and more.</p>
+<p>Looking for inspiration? Look at some <a href="#example-filters">example filters</a>.</p>
+<h2 id="introduction-to-filters">Introduction to Filters<a class="headerlink" href="#introduction-to-filters" title="Permanent link">&para;</a></h2>
+<p>Filters can be applied to splits to provide a selective view of messages. Filters are created in the Settings page and are applied by opening the Split menu (three dots) and selecting "Set filters". Applied filters are saved when you close and open Chatterino.</p>
+<p>Multiple filters can be applied to a Split. A message must pass all applied filters for it to be displayed.</p>
+<p>Simple filters are available through the Channel Filter Creator dialog. Advanced filters take inspiration from many programming languages, and the full description of keywords and operators can be found below.</p>
+<h3 id="writing-your-own-filters">Writing your own filters<a class="headerlink" href="#writing-your-own-filters" title="Permanent link">&para;</a></h3>
+<p>To begin writing your own filters, take a look at the available <a href="#operators">operators</a> and <a href="#variables">variables</a> below.</p>
+<p>For most tasks involving the message content, you can make use of the <code>contains</code> operator, or the <code>matches</code> operator with a <a href="https://en.wikipedia.org/wiki/Regular_expression">regular expression</a>.<br />
+Then, try to break your desired behavior into multiple conditions. Combine them like this:</p>
+<ul>
+<li>If you need <em>all</em> the conditions satisfied, combine them with AND (<code>condition1 &amp;&amp; condition2</code>)</li>
+<li>If you only need <em>one</em> of the conditions, combine them with OR (<code>condition1 || condition2</code>)</li>
+<li>If you need the <em>opposite</em> of one of the conditions, wrap it with parentheses and add a NOT: <code>!(condition)</code></li>
+</ul>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<p>Consider the following intention: "Only show me messages that are from moderators <strong>and</strong> mention me". We can break this filter into two individual conditions:</p>
+<ol>
+<li>Messages that are from moderators</li>
+<li>Messages that mention me</li>
+</ol>
+<p>We can then write the corresponding filter parts:</p>
+<ol>
+<li><code class="highlight"><span class="k">author.badges</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot;moderator&quot;</span></code></li>
+<li><code class="highlight"><span class="k">message.content</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot;@my_name&quot;</span></code></li>
+</ol>
+<p>Finally, because we want <em>both</em> of these conditions to be true, we combine them with the AND operator <code>&amp;&amp;</code> and end up with this final filter:</p>
+<p><code class="highlight"><span class="p">(</span><span class="k">author.badges</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot;moderator&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="k">message.content</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot;@my_name&quot;</span><span class="p">)</span></code></p>
+<h3 id="quick-add">Quick Add<a class="headerlink" href="#quick-add" title="Permanent link">&para;</a></h3>
+<p>If you already have a filter, you can use the <code>Quick Add</code> button and paste your filter into the <code>Filter</code> section.
+<img alt="quickAdd" src="../images/filters/quickAdd.gif" /></p>
+<h3 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">&para;</a></h3>
+<p>Here is some terminology that you'll encounter in the rest of this document.</p>
+<ol>
+<li>Value: A value is the simplest element of a filter. It can take on multiple forms: a number, a string (i.e. text), a <a href="https://en.wikipedia.org/wiki/Regular_expression">regular expression</a>, or a list of multiple values.</li>
+<li>Type: A type describes the general form of a value. For example, every number has type Int. Every string has type String.</li>
+<li>Variable: A variable is a placeholder for some information about a message. For example, the variable <code class="highlight"><span class="k">message.content</span></code> represents the text of a message</li>
+<li>Operator: An operator acts on one or two values and evaluates to another value. For example, the plus operator <code>+</code> can add two numbers, <code class="highlight"><span class="m">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span></code> or concatenate strings, <code class="highlight"><span class="s">&quot;a&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;b&quot;</span></code></li>
+</ol>
+<h2 id="example-filters">Example filters<a class="headerlink" href="#example-filters" title="Permanent link">&para;</a></h2>
+<h3 id="only-show-messages-that-contain-the-phrase-hello">Only show messages that contain the phrase <code>hello</code><a class="headerlink" href="#only-show-messages-that-contain-the-phrase-hello" title="Permanent link">&para;</a></h3>
+<p><code class="highlight"><span class="k">message.content</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot;hello&quot;</span></code></p>
+<h3 id="only-show-messages-that-are-less-than-40-characters-long-or-are-sent-by-a-subscriber">Only show messages that are less than 40 characters long, OR are sent by a subscriber<a class="headerlink" href="#only-show-messages-that-are-less-than-40-characters-long-or-are-sent-by-a-subscriber" title="Permanent link">&para;</a></h3>
+<p><code class="highlight"><span class="k">message.length</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">40</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="k">author.subbed</span></code></p>
+<h3 id="only-show-messages-originated-in-channel-somestreamer-and-are-from-users-with-a-moderator-badge">Only show messages originated in channel <code>somestreamer</code> AND are from users with a moderator badge<a class="headerlink" href="#only-show-messages-originated-in-channel-somestreamer-and-are-from-users-with-a-moderator-badge" title="Permanent link">&para;</a></h3>
+<p><code class="highlight"><span class="k">channel.name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;somestreamer&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">author.badges</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot;moderator&quot;</span></code></p>
+<h3 id="hide-messages-that-start-with-the-phrase-points">Hide messages that start with the phrase <code>!points</code><a class="headerlink" href="#hide-messages-that-start-with-the-phrase-points" title="Permanent link">&para;</a></h3>
+<p><code class="highlight"><span class="o">!</span><span class="p">(</span><span class="k">message.content</span><span class="w"> </span><span class="ow">startswith</span><span class="w"> </span><span class="s">&quot;!points&quot;</span><span class="p">)</span></code></p>
+<h3 id="hide-bits-combo-messages">Hide bits combo messages<a class="headerlink" href="#hide-bits-combo-messages" title="Permanent link">&para;</a></h3>
+<p><code class="highlight"><span class="o">!</span><span class="p">(</span><span class="k">flags.system_message</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">message.content</span><span class="w"> </span><span class="ow">match</span><span class="w"> </span><span class="sr">ri&quot;.* redeemed .* for \d+ Bits&quot;</span><span class="p">)</span></code></p>
+<h3 id="channel-point-rewards">Channel point rewards<a class="headerlink" href="#channel-point-rewards" title="Permanent link">&para;</a></h3>
+<p>Only show channel point rewards</p>
+<p><code class="highlight"><span class="k">flags.reward_message</span></code></p>
+<p>Only show channel point rewards with a specific title or point cost</p>
+<p><code class="highlight"><span class="k">flags.reward_message</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">reward.title</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Game Wheel&quot;</span></code> or <code class="highlight"><span class="k">flags.reward_message</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">flags.points_redeemed</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1500</span></code></p>
+<h3 id="hide-the-connecteddisconnected-message">Hide the connected/disconnected message<a class="headerlink" href="#hide-the-connecteddisconnected-message" title="Permanent link">&para;</a></h3>
+<p><code class="highlight"><span class="o">!</span><span class="p">(</span><span class="k">flags.system_message</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="k">message.content</span><span class="w"> </span><span class="ow">match</span><span class="w"> </span><span class="sr">r&quot;(connect)&quot;</span><span class="p">))</span></code></p>
+<h3 id="hide-the-connecteddisconnected-message-and-joinpart-messages">Hide the connected/disconnected message and JOIN/PART messages<a class="headerlink" href="#hide-the-connecteddisconnected-message-and-joinpart-messages" title="Permanent link">&para;</a></h3>
+<p><code class="highlight"><span class="o">!</span><span class="p">(</span><span class="k">flags.system_message</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="k">message.content</span><span class="w"> </span><span class="ow">match</span><span class="w"> </span><span class="sr">r&quot;(Users|connect)&quot;</span><span class="p">))</span></code></p>
+<h3 id="subathon">Subathon<a class="headerlink" href="#subathon" title="Permanent link">&para;</a></h3>
+<p>Only show messages related to your subathon (bit rewards, subs, gift subs, or donation messages from your chat bot)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="k">flags.cheer_message</span><span class="w"> </span><span class="o">||</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w"> </span><span class="k">reward.title</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Message Effects&quot;</span><span class="w"> </span><span class="o">||</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w"> </span><span class="k">reward.title</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Gigantify an Emote&quot;</span><span class="w"> </span><span class="o">||</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w"> </span><span class="k">reward.title</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;On-Screen Celebration&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">||</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">(</span><span class="k">flags.system_message</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">(</span><span class="o">!</span><span class="k">message.content</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot; gifted a Tier &quot;</span><span class="w"> </span><span class="o">||</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w"> </span><span class="p">(</span><span class="k">message.content</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot; gifted a Tier &quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w"> </span><span class="p">(</span><span class="k">message.content</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot;They have given &quot;</span><span class="w"> </span><span class="o">||</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="k">message.content</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot;This is their first &quot;</span><span class="p">)))</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w"> </span><span class="o">!</span><span class="k">message.content</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot;Announcement&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w"> </span><span class="o">!</span><span class="k">message.content</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot;is paying forward the Gift they got&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">(</span><span class="k">flags.sub_message</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">(</span><span class="o">!</span><span class="k">message.content</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot; raiders from &quot;</span><span class="p">))</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">(</span><span class="o">!</span><span class="k">message.content</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot; consecutive streams &quot;</span><span class="p">)</span><span class="w"> </span><span class="o">||</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="p">(</span><span class="s">&quot;CHATBOTNAME&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">author.name</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="k">message.content</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot;donated&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="k">message.content</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot;tipped&quot;</span><span class="p">))</span>
+</code></pre></div>
+<h3 id="hide-fishing-minigame">Hide fishing minigame<a class="headerlink" href="#hide-fishing-minigame" title="Permanent link">&para;</a></h3>
+<p>Certain parameters will depend on the bot/fishing minigame in question (there are surprisingly many!)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">!</span><span class="p">(</span><span class="k">author.badges</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot;Broadcaster&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w"> </span><span class="p">(</span><span class="k">message.content</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot;gold! You now have&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="o">||</span><span class="w"> </span><span class="k">message.content</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot;total casts!&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="o">!</span><span class="p">(</span><span class="k">message.content</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot;!fish&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="watch-streak">Watch streak<a class="headerlink" href="#watch-streak" title="Permanent link">&para;</a></h3>
+<p>Hide watch streak notifications and their message:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">!</span><span class="k">flags.watch_streak</span>
+</code></pre></div>
+<p>Hide watch streak notification header, but leave the user's message:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">!</span><span class="p">(</span><span class="k">flags.watch_streak</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">message.content</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot;consecutive streams this month and sparked a watch streak&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="filter-syntax-semantics">Filter Syntax + Semantics<a class="headerlink" href="#filter-syntax-semantics" title="Permanent link">&para;</a></h2>
+<p>This section is aimed at technical users who have experience with general purpose programming languages.</p>
+<p>A filter must be a valid expression. An expression is comprised of conditions and values which are evaluated to a single <code>True</code> or <code>False</code> value to decide whether to filter a message. Evaluating to something other than <code>True</code> or <code>False</code> will lead to all messages being filtered out.</p>
+<h3 id="values">Values<a class="headerlink" href="#values" title="Permanent link">&para;</a></h3>
+<p>A value can be:</p>
+<ol>
+<li>An integer (<code class="highlight"><span class="m">123</span></code>, <code class="highlight"><span class="m">5</span></code>)</li>
+<li>A string (<code class="highlight"><span class="s">&quot;hello&quot;</span></code>, <code class="highlight"><span class="s">&quot;this is a string&quot;</span></code>)</li>
+<li>A variable (<code class="highlight"><span class="k">author.name</span></code>, <code class="highlight"><span class="k">message.length</span></code>)<ul>
+<li>Technically, a variable isn't a value, but is given value by substitution</li>
+<li>When a filter is evaluated, variables are replaced with the values they represent</li>
+</ul>
+</li>
+<li>A regular expression (<code class="highlight"><span class="sr">r&quot;\d\d\d\d&quot;</span></code>)</li>
+<li>A list of values (<code class="highlight"><span class="p">{</span><span class="m">123</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">author.name</span><span class="p">}</span></code>)</li>
+</ol>
+<p>Regular expressions are similar to strings, but are denoted with an <code>r</code> before the opening quotation mark (e.g. <code class="highlight"><span class="sr">r&quot;something&quot;</span></code>). To make a regular expression case-insensitive, use <code>ri</code> before the opening quotation mark (e.g. <code class="highlight"><span class="sr">ri&quot;something&quot;</span></code>).</p>
+<p><strong>Literals:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Int</td>
+<td><code class="highlight"><span class="m">123</span></code>, <code class="highlight"><span class="m">5</span></code></td>
+</tr>
+<tr>
+<td>String</td>
+<td><code class="highlight"><span class="s">&quot;Hello there&quot;</span></code>, <code class="highlight"><span class="s">&quot;Escaped </span><span class="se">\&quot;</span><span class="s"> quote&quot;</span></code></td>
+</tr>
+<tr>
+<td>RegEx</td>
+<td><code class="highlight"><span class="sr">r&quot;\d\d\d\d&quot;</span></code>, <code class="highlight"><span class="sr">ri&quot;something.*&quot;</span></code></td>
+</tr>
+<tr>
+<td>List</td>
+<td><code class="highlight"><span class="p">{</span><span class="s">&quot;list item&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">123</span><span class="p">}</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="operators">Operators<a class="headerlink" href="#operators" title="Permanent link">&para;</a></h3>
+<p>Binary operators act on two values:</p>
+<ul>
+<li><code class="highlight"><span class="m">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span></code></li>
+<li><code class="highlight"><span class="k">author.subbed</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">flags.highlighted</span></code></li>
+<li><code class="highlight"><span class="s">&quot;long sentence&quot;</span><span class="w"> </span><span class="ow">contains</span><span class="w"> </span><span class="s">&quot;ten&quot;</span></code></li>
+</ul>
+<p>Unary operators act on one value:</p>
+<ul>
+<li><code class="highlight"><span class="o">!</span><span class="k">author.subbed</span></code></li>
+</ul>
+<p>The following operators are available:</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td><a href="https://en.wikipedia.org/wiki/Logical_conjunction">Logical AND</a></td>
+</tr>
+<tr>
+<td><code> || </code></td>
+<td><a href="https://en.wikipedia.org/wiki/Logical_disjunction">Logical OR</a></td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td><a href="https://en.wikipedia.org/wiki/Negation">Negation</a></td>
+</tr>
+<tr>
+<td><code>==</code></td>
+<td>Equals</td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td>Not equals</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>Less than</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>Less than or equal to</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>Greater than</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>Greater than or equal to</td>
+</tr>
+<tr>
+<td><code>contains</code></td>
+<td>String, List, or Map contains</td>
+</tr>
+<tr>
+<td><code>startswith</code></td>
+<td>String or List starts with text or value, respectively</td>
+</tr>
+<tr>
+<td><code>endswith</code></td>
+<td>String or List ends with text or value, respectively</td>
+</tr>
+<tr>
+<td><code>match</code></td>
+<td>Match string with regular expression</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>Add (or string concatenation)</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>Subtract</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Multiply</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>Divide (integer)</td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>Modulus</td>
+</tr>
+</tbody>
+</table>
+<p>Please read about the <a href="#type-rules">type rules</a> to better understand the evaluation semantics for operators that take multiple data types.</p>
+<h3 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h3>
+<p>The following variables are available:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Author</strong></td>
+<td></td>
+<td>User who sent the message</td>
+</tr>
+<tr>
+<td><code>author.badges</code></td>
+<td>List<String></td>
+<td>List of author's badges</td>
+</tr>
+<tr>
+<td><code>author.external_badges</code></td>
+<td>List<String></td>
+<td>List of author's external (e.g. FrankerFaceZ) badges</td>
+</tr>
+<tr>
+<td><code>author.color</code></td>
+<td>Color*</td>
+<td>Color code of author, or none</td>
+</tr>
+<tr>
+<td><code>author.name</code></td>
+<td>String</td>
+<td>Display name of author</td>
+</tr>
+<tr>
+<td><code>author.user_id</code></td>
+<td>String</td>
+<td>The Twitch User ID of author</td>
+</tr>
+<tr>
+<td><code>author.no_color</code></td>
+<td>Bool</td>
+<td>Whether the author has no color set (i.e. gray name)</td>
+</tr>
+<tr>
+<td><code>author.subbed</code></td>
+<td>Bool</td>
+<td>Whether author is subscribed</td>
+</tr>
+<tr>
+<td><code>author.sub_length</code></td>
+<td>Int</td>
+<td>How long author has been subscribed (or zero)</td>
+</tr>
+<tr>
+<td><strong>Bits</strong></td>
+<td></td>
+<td>Bits involved in the message</td>
+</tr>
+<tr>
+<td><code>bits.amount</code></td>
+<td>Int</td>
+<td>How many bits were cheered in this message.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+</tr>
+<tr>
+<td><strong>Channel</strong></td>
+<td></td>
+<td>The channel where the message was sent</td>
+</tr>
+<tr>
+<td><code>channel.name</code></td>
+<td>String</td>
+<td>Channel name</td>
+</tr>
+<tr>
+<td><code>channel.watching</code></td>
+<td>Bool</td>
+<td>Whether the channel is being watched (requires Chatterino extension)</td>
+</tr>
+<tr>
+<td><code>channel.live</code></td>
+<td>Bool</td>
+<td>Whether the channel is currently live</td>
+</tr>
+<tr>
+<td><strong>Flags</strong></td>
+<td></td>
+<td>Message-specific flags</td>
+</tr>
+<tr>
+<td><code>flags.action</code></td>
+<td>Bool</td>
+<td>Whether the message was sent with <code>/me</code></td>
+</tr>
+<tr>
+<td><code>flags.automod</code></td>
+<td>Bool</td>
+<td>Whether the message has automod information or actions</td>
+</tr>
+<tr>
+<td><code>flags.cheer_message</code></td>
+<td>Bool</td>
+<td>Whether the message includes bits</td>
+</tr>
+<tr>
+<td><code>flags.first_message</code></td>
+<td>Bool</td>
+<td>Whether the message is the author's first message in the channel</td>
+</tr>
+<tr>
+<td><code>flags.highlighted</code></td>
+<td>Bool</td>
+<td>Whether the message is highlighted</td>
+</tr>
+<tr>
+<td><code>flags.points_redeemed</code></td>
+<td>Bool</td>
+<td>Whether the message was redeemed through the channel point reward "Highlight my Message"</td>
+</tr>
+<tr>
+<td><code>flags.reply</code></td>
+<td>Bool</td>
+<td>Whether the message is a reply</td>
+</tr>
+<tr>
+<td><code>flags.restricted</code></td>
+<td>Bool</td>
+<td>Whether the message comes from a restricted user</td>
+</tr>
+<tr>
+<td><code>flags.monitored</code></td>
+<td>Bool</td>
+<td>Whether the message comes from a monitored user (currently doesn't work)</td>
+</tr>
+<tr>
+<td><code>flags.reward_message</code></td>
+<td>Bool</td>
+<td>Whether the message is a redeemed channel point reward message (except "Highlight my Message")</td>
+</tr>
+<tr>
+<td><code>flags.shared</code></td>
+<td>Bool</td>
+<td>Whether the message comes from a another channel</td>
+</tr>
+<tr>
+<td><code>flags.sub_message</code></td>
+<td>Bool</td>
+<td>Whether the message is a sub/resub/gift message</td>
+</tr>
+<tr>
+<td><code>flags.system_message</code></td>
+<td>Bool</td>
+<td>Whether the message is a system message (i.e. timeout/ban/info)</td>
+</tr>
+<tr>
+<td><code>flags.whisper</code></td>
+<td>Bool</td>
+<td>Whether the message is a whisper</td>
+</tr>
+<tr>
+<td><code>flags.similar</code></td>
+<td>Bool</td>
+<td>Whether the message is marked as similar to a previous message based on your R9K settings</td>
+</tr>
+<tr>
+<td><code>flags.watch_streak</code></td>
+<td>Bool</td>
+<td>Whether the message is a Watch Streak message</td>
+</tr>
+<tr>
+<td><strong>Message</strong></td>
+<td></td>
+<td>Actual message sent</td>
+</tr>
+<tr>
+<td><code>message.content</code></td>
+<td>String</td>
+<td>Message content</td>
+</tr>
+<tr>
+<td><code>message.length</code></td>
+<td>Int</td>
+<td>Message length</td>
+</tr>
+<tr>
+<td><strong>Reward</strong></td>
+<td></td>
+<td>Information about the channel point redemption of this message, if any</td>
+</tr>
+<tr>
+<td><code>reward.title</code></td>
+<td>String</td>
+<td>Title of the redemption (e.g. Drink water!)</td>
+</tr>
+<tr>
+<td><code>reward.cost</code></td>
+<td>Int</td>
+<td>Cost of the redemption (e.g. 500)</td>
+</tr>
+<tr>
+<td><code>reward.id</code></td>
+<td>String</td>
+<td>ID of the redemption (e.g. 1ed437f5-9dc3-4510-8a3f-abcad67985e1)</td>
+</tr>
+</tbody>
+</table>
+<p>*Note: To compare a <code>Color</code>, compare it to a color hex code string: <code class="highlight"><span class="k">author.color</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;#FF0000&quot;</span></code></p>
+<h3 id="data-types">Data types<a class="headerlink" href="#data-types" title="Permanent link">&para;</a></h3>
+<p>The Chatterino filter language is typed, meaning that every value has a type and only specific combinations of types are allowed when using operators. Generally, you won't run in to issues. The type system exists to warn you about any mistakes that your filter contains.</p>
+<h4 id="type-rules">Type Rules<a class="headerlink" href="#type-rules" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Form</th>
+<th>Result</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td><code>Int + Int</code></td>
+<td><code>Int</code></td>
+<td>Adds two integers</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td><code>String + Any</code></td>
+<td><code>String</code></td>
+<td>Concatenates the first string with the second argument</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td><code>Int - Int</code></td>
+<td><code>Int</code></td>
+<td>Subtracts two integers</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td><code>Int * Int</code></td>
+<td><code>Int</code></td>
+<td>Multiplies two integers</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td><code>Int / Int</code></td>
+<td><code>Int</code></td>
+<td>Divides two integers, discarding the remainder</td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td><code>Int % Int</code></td>
+<td><code>Int</code></td>
+<td>Computes the modulus of two integers</td>
+</tr>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td><code>Bool &amp;&amp; Bool</code></td>
+<td><code>Bool</code></td>
+<td>Logical AND of two booleans</td>
+</tr>
+<tr>
+<td><code>||</code></td>
+<td><code>Bool || Bool</code></td>
+<td><code>Bool</code></td>
+<td>Logical OR of two booleans</td>
+</tr>
+<tr>
+<td><code>==</code></td>
+<td><code>Any == Any</code></td>
+<td><code>Bool</code></td>
+<td>Equality comparison of any two values</td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td><code>Any != Any</code></td>
+<td><code>Bool</code></td>
+<td>Inequality comparison of any two values</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td><code>Int &gt; Int</code></td>
+<td><code>Bool</code></td>
+<td>Greater than comparison of two integers</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td><code>Int &gt;= Int</code></td>
+<td><code>Bool</code></td>
+<td>Greater than or equal to comparison of two integers</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td><code>Int &lt; Int</code></td>
+<td><code>Bool</code></td>
+<td>Less than comparison of two integers</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td><code>Int &lt;= Int</code></td>
+<td><code>Bool</code></td>
+<td>Less than or equal to comparison of two integers</td>
+</tr>
+<tr>
+<td><code>startswith</code></td>
+<td><code>List startswith Any</code></td>
+<td><code>Bool</code></td>
+<td>Checks whether the list has the given value as its first value</td>
+</tr>
+<tr>
+<td><code>startswith</code></td>
+<td><code>String startswith String</code></td>
+<td><code>Bool</code></td>
+<td>Checks whether the first string starts with the second string</td>
+</tr>
+<tr>
+<td><code>endswith</code></td>
+<td><code>List endswith Any</code></td>
+<td><code>Bool</code></td>
+<td>Checks whether the list has the given value as its last value</td>
+</tr>
+<tr>
+<td><code>endswith</code></td>
+<td><code>String endswith String</code></td>
+<td><code>Bool</code></td>
+<td>Checks whether the first string ends with the second string</td>
+</tr>
+<tr>
+<td><code>contains</code></td>
+<td><code>List contains Any</code></td>
+<td><code>Bool</code></td>
+<td>Checks whether the list contains the given value</td>
+</tr>
+<tr>
+<td><code>contains</code></td>
+<td><code>Map contains Any</code></td>
+<td><code>Bool</code></td>
+<td>Checks whether the map has the given value as a key</td>
+</tr>
+<tr>
+<td><code>contains</code></td>
+<td><code>String contains String</code></td>
+<td><code>Bool</code></td>
+<td>Checks whether the first string contains the second string</td>
+</tr>
+<tr>
+<td><code>match</code></td>
+<td><code>String match RegEx</code></td>
+<td><code>Bool</code></td>
+<td>Checks whether the string matches the given regular expression</td>
+</tr>
+<tr>
+<td><code>match</code></td>
+<td><code>String match {RegEx, n : Int}</code></td>
+<td><code>String</code></td>
+<td>Returns the <code>n</code>th matching capture group, or the empty string</td>
+</tr>
+</tbody>
+</table>
+<h3 id="regular-expressions">Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permanent link">&para;</a></h3>
+<p>Chatterino can match string variables to a regular expression, returning whether the expression matched or, optionally, the value of a capture group.</p>
+<h4 id="simple-matching">Simple matching<a class="headerlink" href="#simple-matching" title="Permanent link">&para;</a></h4>
+<p><code class="highlight"><span class="s">&quot;some string&quot;</span><span class="w"> </span><span class="ow">match</span><span class="w"> </span><span class="sr">r&quot;some regex&quot;</span></code> returns <code>True</code> or <code>False</code>.</p>
+<p>For example: <code class="highlight"><span class="k">message.content</span><span class="w"> </span><span class="ow">match</span><span class="w"> </span><span class="sr">r&quot;\d\d&quot;</span></code></p>
+<h4 id="group-capturing">Group capturing<a class="headerlink" href="#group-capturing" title="Permanent link">&para;</a></h4>
+<p><code class="highlight"><span class="s">&quot;some string&quot;</span><span class="w"> </span><span class="ow">match</span><span class="w"> </span><span class="p">{</span><span class="sr">r&quot;some regex&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">capture</span><span class="w"> </span><span class="k">number</span><span class="p">}</span></code> returns <code>False</code> if no match or the value of the nth captured group.</p>
+<p>For example: <code class="highlight"><span class="k">message.content</span><span class="w"> </span><span class="ow">match</span><span class="w"> </span><span class="p">{</span><span class="sr">r&quot;(\d\d)/(\d\d)/(\d\d\d\d)&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">}</span></code> matches the year component of a date like <code>12/31/2020</code>.</p>
+<p><code class="highlight"><span class="p">(</span><span class="k">message.content</span><span class="w"> </span><span class="ow">match</span><span class="w"> </span><span class="p">{</span><span class="sr">r&quot;(\d\d)/(\d\d)/(\d\d\d\d)&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">})</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;2020&quot;</span></code> will filter only messages that contain a written date with 2020 as the year.</p>
+<h3 id="order-of-operations">Order of Operations<a class="headerlink" href="#order-of-operations" title="Permanent link">&para;</a></h3>
+<p>The order of operations in filters may not be exactly what you expect.</p>
+<ul>
+<li>Expressions in parentheses are evaluated first</li>
+<li>Math operations are evaluated from left to right, not by MDAS. <code class="highlight"><span class="m">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">4</span></code> yields <code>20</code>, not <code>14</code>.</li>
+<li><code class="highlight"><span class="k">a</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">b</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">d</span></code> is evaluated as <code class="highlight"><span class="p">(</span><span class="k">a</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">b</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="k">c</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">d</span><span class="p">)</span></code></li>
+<li><code class="highlight"><span class="k">a</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="k">b</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="k">d</span></code> is evaluated as <code class="highlight"><span class="k">a</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="k">b</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">c</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="k">d</span></code></li>
+</ul>
+<p>Basically, if you're unsure about the order of operations, use extra parentheses.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Available since <a href="../Help/#what-is-nightly-and-how-to-use-install-it">nightly</a> <a href="https://github.com/Chatterino/chatterino2/commit/b8d09e9084e5f1649c8e8385cb15251232867422">b8d09e9</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="August 15, 2026 10:53:35 UTC">August 15, 2026 10:53:35</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://discord.gg/qq7DDxjste" target="_blank" rel="noopener" title="Discord" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/chatterino/chatterino2" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://streamelements.com/fourtf/tip" target="_blank" rel="noopener" title="Donate" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M136 24c0-13.3 10.7-24 24-24s24 10.7 24 24v40h56c17.7 0 32 14.3 32 32s-14.3 32-32 32H125.1c-24.9 0-45.1 20.2-45.1 45.1 0 22.5 16.5 41.5 38.7 44.7l91.6 13.1c53.8 7.7 93.7 53.7 93.7 108 0 60.3-48.9 109.1-109.1 109.1H184v40c0 13.3-10.7 24-24 24s-24-10.7-24-24v-40H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h130.9c24.9 0 45.1-20.2 45.1-45.1 0-22.5-16.5-41.5-38.7-44.7l-91.6-13.1c-53.8-7.6-93.7-53.7-93.7-108C16 112.9 64.9 64 125.1 64H136z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
